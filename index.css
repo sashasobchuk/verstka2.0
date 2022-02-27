@@ -3,17 +3,21 @@
 }
 
 body {
-    margin: 0;
+    /*margin: 0;*/
 }
-button{
+
+button {
     cursor: pointer;
 }
 
 .site {
     overflow: hidden;
     position: relative;
+    max-width: 100vw;
 }
+/*//////////////////////////////////////////////////////////////////////////////////////
 
+*/
 
 .header {
     display: flex;
@@ -22,6 +26,7 @@ button{
     align-items: center;
     align-content: stretch;
     margin-bottom: 5vw;
+    font-size: 4.5vw;
 }
 
 .header__left, .header__right {
@@ -29,7 +34,6 @@ button{
 }
 
 .header__left {
-    font-size: 3.5vw;
     background: -webkit-linear-gradient(#93291E 48.06%, #ED213A 59.68%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,15 +53,14 @@ button{
 .header__central {
     flex-grow: 6;
     align-self: center;
-    font-size: 1vw;
+    font-size: 2.3vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: stretch;
     align-items: flex-end;
     position: relative;
-    font-family: Inter;
-    font-size: 1vw;
+    font-family: Inter, serif;
 
 }
 
@@ -88,8 +91,8 @@ button{
     /*padding: 1vw 1vw 1vw 1vw;*/
     border-radius: 7px;
     display: inline-block;
-    font-size: 1.5vw;
     margin-right: 10%;
+    aspect-ratio: 11/1;
 }
 
 .singin:hover {
@@ -134,7 +137,7 @@ button{
 .welcom_descrip {
     display: block;
     /*line-height: 30px;*/
-
+    font-size: 20px;
 }
 
 .sign__btn {
@@ -144,9 +147,11 @@ button{
     font-size: 1.5vw;
     background-color: #DC483B;
     border-radius: 5px;
+    transition: .4s ease-in-out;
 }
 
 .sign__btn:hover {
+    transition: .4s ;
     background-color: #e8878b;
 
 }
@@ -191,10 +196,11 @@ button{
 
 
 .partners {
-    font-size: 4vw;
+    font-size: 50px;
     display: flex;
     justify-content: center;
     font-weight: bold;
+    z-index: 5;
 }
 
 
@@ -227,26 +233,29 @@ button{
     position: absolute;
     background-size: cover;
     /*border: solid red 1px;*/
+    transition: 0.1s;
 }
 
 
 .aldFoto > img, .newFoto > img {
     width: 100%;
 }
-.newFoto{
+
+.newFoto {
     opacity: 0;
 }
-.newFoto:hover{
+
+.newFoto:hover {
+    z-index: 1;
+    transition: 0.5s;
     opacity: 1;
-    transform: scale(1.3);
+    transform: scale(1.15) translate3d(0, 20px, 0);
+    cursor: pointer;
 }
 
-.aldFoto:hover{
+.aldFoto:hover {
     opacity: 0;
 }
-
-
-
 
 
 /*111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
@@ -271,16 +280,19 @@ button{
 }
 
 .searching > div > div {
+    text-align: center;
     border: #a9a9a9 solid 2px;
     margin: 1vw;
     padding: 1vw;
     border-radius: 8px;
     font-size: 1vw;
     cursor: pointer;
-
+    transition: 1s;
 }
+
 .searching > div > div:hover {
     background-color: #e3eef2;
+    transition: 1s;
 }
 
 /*111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
@@ -327,6 +339,7 @@ button{
     background: transparent;
     transition: border-color 0.2s;
     color: black;
+
 }
 
 
@@ -351,12 +364,13 @@ button{
     width: 25%;
     background-size: contain;
 }
+
 .fotosBar > div > img {
     /* mainFoto*/
     width: 100%;
 }
 
- .span1 {
+.span1 {
     position: absolute;
     width: 70%;
     top: 70%;
@@ -366,10 +380,9 @@ button{
 
 }
 
-.span2{
+.span2 {
     opacity: 0;
 }
-
 
 
 .fotosBar__imagae2 {
@@ -378,16 +391,17 @@ button{
     height: auto;
     right: 10%;
     top: 50%;
-   /*border: red solid 1px;*/
+    /*border: red solid 1px;*/
 }
 
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111111111111111*/
 
 .footer {
     background-color: #262626;
-    height: 20vw;
+    height: 200px;
     width: 100%;
     position: relative;
+
 }
 
 .footer__tittel {
@@ -395,18 +409,18 @@ button{
     text-align: center;
     color: #ffffff;
     padding-top: 1vw;
-
 }
 
 .footer__bar {
     color: #ffffff;
-    font-size: 1vw;
+    font-size: 1.5vw;
     display: flex;
     justify-content: space-around;
-    width: 60%;
-    margin-left: 20%;
     padding-top: 1vw;
     cursor: pointer;
+}
+.footer__bar >div{
+    text-align: center;
 }
 
 .lowFooter {
@@ -424,7 +438,7 @@ button{
 
 .footerLeftFrame {
     color: #ffffff;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 .footerRightFrame > a {
@@ -446,9 +460,19 @@ button{
 .firstCub {
     position: absolute;
     background: linear-gradient(173deg, #139856 30%, #1c832a 36%);
-    left: -6vw;
+    left: -5vw;
     top: 40vw;
     transform: rotate(-140grad);
+    transition: 1s;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+.firstCub:hover{
+    transition: 1s;
+    transform: rotate(-0grad) translateX(100px);
+
+
 }
 
 .secondCub {
@@ -507,5 +531,114 @@ button{
 
 
 
+
+@media (max-width: 768px) {
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+
+    .header{
+        font-size: 5.5vw;
+
+    }
+    .header__central{
+        font-size: 4vw;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: flex-start;
+        margin: 10px 0;
+
+    }
+    .header__right{
+        font-size: 3vw;
+        margin: 10px ;
+
+    }
+    .welcoming__leftSide{
+        font-size: 2.5vw;
+
+    }
+    .searching > div > div {
+        font-size: 2.2vw;
+    }
+    .inputs__items{
+        font-size: 3vw;
+    }
+    .inputs__items_tittle{
+        font-size: 3vw;
+    }
+
+    .inputs__titte{
+        font-size: 3vw;
+    }
+    .footer{
+        height: 50vw;
+    }
+    .footer__tittel{
+        font-size:3.5vw ;
+
+    }
+    .footer__bar{
+        font-size:3.5vw;
+        flex-direction: column;
+    }
+
+    .lowFooter{
+        font-size: 3.5vw;
+        margin-top: 400px;
+    }
+
+
+}
+@media screen and (max-width: 425px) {
+
+    .header{
+        font-size: 26px;
+
+    }
+    .header__central{
+        font-size: 26px;
+    }
+    .header__right{
+        font-size: 26px;
+    }
+    .welcoming__leftSide{
+        font-size: 3.5vw;
+    }
+    .searching > div > div {
+        font-size: 3.2vw;
+    }
+
+    .inputs__items_tittle{
+        font-size:4vw ;
+    }
+    .inputs__items{
+        font-size:4vw ;
+    }
+
+    .inputs__titte{
+        font-size: 4vw;
+    }
+    .footer{
+        height: 250px;
+    }
+    .footer__tittel{
+        font-size:5.2vw ;
+
+    }
+    .footer__bar{
+        font-size: 5.2vw;
+    }
+
+    .lowFooter{
+        font-size: 5.2vw;
+    }
+
+}
+/*
+@media screen and (max-width: 320px) {  }
+*/
 
 

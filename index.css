@@ -3,7 +3,7 @@
 }
 
 body {
-    /*margin: 0;*/
+    margin: 0;
 }
 
 button {
@@ -13,7 +13,7 @@ button {
 .site {
     overflow: hidden;
     position: relative;
-    max-width: 100vw;
+    width: 100%;
 }
 /*//////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,12 +25,11 @@ button {
     flex-direction: row;
     align-items: center;
     align-content: stretch;
-    margin-bottom: 5vw;
     font-size: 4.5vw;
 }
 
 .header__left, .header__right {
-    flex-grow: 5;
+    flex-grow: 1;
 }
 
 .header__left {
@@ -82,7 +81,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 1vw;
+    font-size: 20px;
     position: relative;
 }
 
@@ -113,38 +112,50 @@ button {
 /*111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
 
 .welcoming {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /*display: grid;*/
+    /*grid-template-columns: 1fr 1fr;*/
+    /*overflow-y: scroll;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+.welcoming >div{
+    min-height: 200px;
 }
 
-.welcoming__leftSide {
+.welcoming__leftSide ,.welcoming__rightSide {
+    flex: 1 1 400px;
+}
+.welcoming__leftSide{
     display: flex;
     flex-direction: column;
     padding-left: 4vw;
     padding-right: 8vw;
     font-size: 1.3vw;
-    height: 30vw;
+    /*height: 30vw;*/
     align-items: stretch;
     justify-content: center;
+
 }
 
 .welcom {
     font-size: 4vw;
     margin-bottom: 4vw;
-    font-family: Inter;
+    font-family: Inter, monospace;
 }
 
 .welcom_descrip {
     display: block;
-    /*line-height: 30px;*/
     font-size: 20px;
+    z-index: 2;
+    border-radius: 5px;
+    /*background-color: white;*/
 }
 
 .sign__btn {
-    width: 12vw;
-    height: 3vw;
+    /*width: 12vw;*/
+    /*height: 3vw;*/
     margin-top: 3vw;
-    font-size: 1.5vw;
+    font-size: 20px;
     background-color: #DC483B;
     border-radius: 5px;
     transition: .4s ease-in-out;
@@ -160,20 +171,29 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .welcoming__rightSide_box {
+    aspect-ratio: 20/11;
     width: 100%;
-    height: 80%;
-    background: radial-gradient(darkblue, blue);
-    /*transform: scale(1.2);*/
-    margin-right: 10%;
+    margin: 10%;
     border-radius: 8px;
+    /*overflow: hidden;*/
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+}
+.welcoming__rightSide_boximg{
+}
+.welcoming__rightSide_box img{
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+
+    cursor: pointer;
+
 }
 
 .welcoming__rightSide_box > img {
@@ -181,15 +201,23 @@ button {
     /*width: 100%;*/
     height: 30%;
 }
+.video{
+    width: 100%;
+}
 
 /*111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
 
 .down {
     display: flex;
     justify-content: center;
-    /*border: red solid 1px;*/
     margin-top: 5vw;
     margin-bottom: 5vw;
+    transition: 0.2s;
+}
+.down:hover{
+    transition: 0.3s;
+    transform: scale(1.2) translateY(10px);
+    cursor: pointer;
 }
 
 /*111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
@@ -232,7 +260,6 @@ button {
 .aldFoto, .newFoto {
     position: absolute;
     background-size: cover;
-    /*border: solid red 1px;*/
     transition: 0.1s;
 }
 
@@ -314,8 +341,6 @@ button {
 .inputs {
     display: flex;
     flex-direction: column;
-    /*background-color: blue;*/
-    /*border: solid 1px red;*/
 }
 
 .inputs__titte {
@@ -347,6 +372,7 @@ button {
 
 
 .fotosBar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -362,12 +388,22 @@ button {
     /*mainFull box*/
     position: relative;
     width: 25%;
+    height: auto;
     background-size: contain;
 }
+
 
 .fotosBar > div > img {
     /* mainFoto*/
     width: 100%;
+}
+.smallDivContainer{
+    position: relative;
+    background-color: black;
+}
+.smallDivContainer img{
+    position: absolute;
+    bottom: 20px;
 }
 
 .span1 {
@@ -381,26 +417,29 @@ button {
 }
 
 .span2 {
-    opacity: 0;
+    opacity: 1;
 }
 
 
 .fotosBar__imagae2 {
     position: absolute;
     width: 20%;
+    aspect-ratio: 1;
     height: auto;
     right: 10%;
-    top: 50%;
     /*border: red solid 1px;*/
 }
 
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111111111111111*/
 
 .footer {
+    margin: 0;
+
     background-color: #262626;
     height: 200px;
     width: 100%;
     position: relative;
+
 
 }
 
@@ -419,8 +458,20 @@ button {
     padding-top: 1vw;
     cursor: pointer;
 }
-.footer__bar >div{
-    text-align: center;
+.footer__bar > div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+.footer__bar > div:hover:after{
+    content: '';
+    position:absolute;
+    transition: 1s;
+    border-bottom: white solid 2px;
+    bottom: -10px;
+    width: 100% ;
+    height: 10px;
 }
 
 .lowFooter {
@@ -438,7 +489,8 @@ button {
 
 .footerLeftFrame {
     color: #ffffff;
-    font-size: 1.2vw;
+    font-size: 20px;
+    text-align: center;
 }
 
 .footerRightFrame > a {
@@ -451,17 +503,18 @@ button {
 }
 
 .firstCub, .secondCub, .thirdCub, .forthCub, .fiweCub, .sixCub {
-    width: 10vw;
-    height: 10vw;
+    width: 80px;
+    aspect-ratio: 1/1;
     border-radius: 10px;
+    z-index: 0;
 }
 
 
 .firstCub {
     position: absolute;
     background: linear-gradient(173deg, #139856 30%, #1c832a 36%);
-    left: -5vw;
-    top: 40vw;
+    left: -4vw;
+    top: 80vh;
     transform: rotate(-140grad);
     transition: 1s;
     text-align: center;
@@ -469,7 +522,7 @@ button {
     color: white;
 }
 .firstCub:hover{
-    transition: 1s;
+    transition: 1.2s;
     transform: rotate(-0grad) translateX(100px);
 
 
@@ -480,8 +533,8 @@ button {
     height: 18vw;
     background: rgb(16, 30, 103);
     background: linear-gradient(90deg, rgba(16, 30, 103, 5), rgba(26, 38, 90, 5));
-    right: -8vw;
-    top: 80vw;
+    right: -9vw;
+    top: 110vw;
     transform: rotate(-144grad);
 }
 
@@ -490,7 +543,7 @@ button {
     position: absolute;
     width: 10vw;
     height: 20vw;
-    top: 110vw;
+    top: 120vw;
     left: -8vw;
     transform: rotate(28grad) scale(1.4);
 
@@ -536,12 +589,10 @@ button {
     .header{
         flex-direction: column;
         align-items: flex-start;
-        margin: 10px 0;
     }
 
     .header{
         font-size: 5.5vw;
-
     }
     .header__central{
         font-size: 4vw;
@@ -552,12 +603,19 @@ button {
 
     }
     .header__right{
-        font-size: 3vw;
-        margin: 10px ;
+        margin: 20px ;
+    }
+    .welcoming__rightSide_box {
+        margin: unset;
+    }
+    .welcoming{
+        /*display: grid;*/
+        /*grid-auto-columns: auto;*/
+        /*grid-template-rows: 1fr 1fr;*/
 
     }
     .welcoming__leftSide{
-        font-size: 2.5vw;
+        font-size: 20px;
 
     }
     .searching > div > div {
@@ -589,14 +647,23 @@ button {
         font-size: 3.5vw;
         margin-top: 400px;
     }
+    .fotosBar > div{
+        /*height: 200px;*/
+    }
+    .footer__bar > div:hover:after {
+        bottom: -1px;
 
+    }
+
+    .span2 {
+        display: none;
+    }
 
 }
 @media screen and (max-width: 425px) {
 
     .header{
         font-size: 26px;
-
     }
     .header__central{
         font-size: 26px;
@@ -604,6 +671,7 @@ button {
     .header__right{
         font-size: 26px;
     }
+
     .welcoming__leftSide{
         font-size: 3.5vw;
     }
@@ -635,6 +703,11 @@ button {
     .lowFooter{
         font-size: 5.2vw;
     }
+}
+.card_name{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center
 
 }
 /*

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 
@@ -11,7 +13,7 @@
 <div class="site">
 
     <div class="cubs">
-        <div class="firstCub"> some hint </div>
+        <div class="firstCub"> some hint</div>
         <div class="secondCub"></div>
 
         <div class="firstCubBar">
@@ -68,7 +70,12 @@
 
         <div class="welcoming__rightSide">
             <div class="welcoming__rightSide_box">
-                <img src="on.png" alt="">
+                <img src="on.png" class="fideoImg" alt="">
+                <video class="video" controls >
+                    <source src="kats.mp4"
+                            type="video/mp4">
+                    Sorry, your browser doesn't support  videos.
+                </video>
             </div>
 
 
@@ -270,23 +277,20 @@
     <div class="fotosBar">
         <div>
             <img src="./frames/foto1.png" alt="">
-            <div>
+            <div class="smallDivContainer">
                 <img class="fotosBar__imagae2" src="./forFoto1.png" alt="">
             </div>
+               <p class="card_name">The right fit for you </p>
 
-            <span class="span1">The right <br>
-                fit for you</span>
 
             <span class="span2">You’re in control. Wonatech only presents roles that meet your preferences</span>
         </div>
-
         <div>
             <img src="./frames/foto2.png" alt="">
-            <div>
+            <div class="smallDivContainer">
                 <img class="fotosBar__imagae2" src="./forFoto2.svg" alt="">
-
             </div>
-            <span class="span1">Expert Career Advancement</span>
+            <p class="card_name">Expert Career Advancement</p>
 
             <span class="span2">Refine your portfolio, sharpen your
 skills, and connect with like-minded professionals</span>
@@ -294,15 +298,13 @@ skills, and connect with like-minded professionals</span>
         </div>
         <div>
             <img src="./frames/foto3.png" alt="">
-            <div>
+            <div class="smallDivContainer">
                 <img class="fotosBar__imagae2" src="./forFoto3.png" alt="">
-
             </div>
-            <span class="span1">Ground-breaking companies</span>
-            <span class="span2">From big brands to emerging start-ups. Meet the companies solving big problems</span>
+            <p class="card_name">Ground-breaking companies</p>
+            <span class="span2">You’re in control. Wonatech only presents roles that meet your preferences</span>
 
         </div>
-
     </div>
 
 
@@ -324,19 +326,24 @@ skills, and connect with like-minded professionals</span>
             </div>
 
             <div class="footerRightFrame">
-                <a href=""><img src="footerF.png" alt="footerF"></a>
-                <a href=""><img src="fotterT.png" alt="fotterT"></a>
-                <a href=""><img src="footerIn.png" alt="footerIn"></a>
-                <a href=""><img src="footerInsta.png" alt="footerInsta"></a>
+                <a href="https://www.facebook.com/"><img src="footerF.png" alt="footerF"></a>
+                <a href="https://twitter.com"><img src="fotterT.png" alt="fotterT"></a>
+                <a href="https://www.linkedin.com/in/oleksandr-sobchuk-a06085161/"><img src="footerIn.png" alt="footerIn"></a>
+                <a href="https://www.instagram.com/___0sasha0___/"><img src="footerInsta.png" alt="footerInsta"></a>
             </div>
         </div>
 
 
     </div>
 </div>
+<script>
+   let videoPhoto =  document.querySelector(".fideoImg")
+   let videoContainer = document.querySelector(".welcoming__rightSide_box")
+   let video = document.querySelector(".video")
+   video.addEventListener('play',()=>videoPhoto.style.display='none')
+   video.addEventListener('pause',()=>videoPhoto.style.display='flex')
+   videoPhoto.addEventListener('click',()=>video.play())
 
-<script >
-    console.log(window.innerWidth)
 </script>
 </body>
 </html>
